@@ -67,7 +67,7 @@ public class App {
         HttpServer server = HttpServer.create(new InetSocketAddress(getBaseURI().getPort()), 0);
 
         // create a handler wrapping the JAX-RS application
-        HttpHandler handler = RuntimeDelegate.getInstance().createEndpoint(new JaxRsApplication(), HttpHandler.class);
+        HttpHandler handler = RuntimeDelegate.getInstance().createEndpoint(new MyApplication(), HttpHandler.class);
 
         // map JAX-RS handler to the server root
         server.createContext(getBaseURI().getPath(), handler);
